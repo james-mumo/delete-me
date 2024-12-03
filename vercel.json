@@ -1,12 +1,13 @@
 {
     "version": 2,
+    "framework": "php",
     "builds": [
         {
             "src": "api/index.php",
             "use": "vercel-php@0.6.0"
         },
         {
-            "src": "public/build/**",
+            "src": "public/**",
             "use": "@vercel/static"
         }
     ],
@@ -15,5 +16,9 @@
             "src": "/(.*)",
             "dest": "/api/index.php"
         }
-    ]
+    ],
+    "env": {
+        "APP_ENV": "production",
+        "APP_DEBUG": "false"
+    }
 }
